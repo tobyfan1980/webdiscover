@@ -1,0 +1,9 @@
+<header  ng-include="'views/nav.html'"></header>
+
+<h2>{{status}}</h2>
+
+<button id="btnViewReport" ng-click="onViewReport()">ViewReport</button>
+
+<div id="divView">
+    <iframe id="ifrPowerbi" ng-src="{{powerbiSrc}}" width="100%" height="600"></iframe>
+</div>
