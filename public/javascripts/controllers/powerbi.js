@@ -5,42 +5,43 @@
 
 var app = angular.module('Discover');
 app.controller('PowerBICtrl', [
-    '$scope', '$sce', '$window', 'PowerBI', function ($scope, $sce, $window, PowerBI) {
+    '$scope', '$sce', '$window', 'PowerBIService', function ($scope, $sce, $window, PowerBIService) {
         $scope.status = "OK";
 
-        $scope.onViewReport = function () {
-            PowerBI.GetToken().success(function(report){
-                $scope.embedToken = report.token;
-                $scope.powerbiSrc = $sce.trustAsResourceUrl(report.embedUrl);
-                console.log(report);
 
+        PowerBIService.GetToken().then(function onSuccess(response){
 
-                var msgJson = {
-                    action: "loadReport",
-                    accessToken: report.token,
-                    height:600,
-                    width:800
-                };
-                var msgTxt = JSON.stringify(msgJson);
+            $scope.report = response.data;
+            console.log($scope.report);
 
-                console.log(report.token);
+/*
+            var msgJson = {
+                action: "loadReport",
+                accessToken: report.token,
+                height:600,
+                width:800
+            };
+            var msgTxt = JSON.stringify(msgJson);
 
-                $window.parent.postMessage(msgTxt, '*');
-                console.log(msgTxt);
-                /*
-                 if($window.parent != $window){
-                 $window.parent.postMessage(msgTxt, '*');
-                 console.log(msgTxt);
-                 }
-                 */
-                /*
-                 var iframe = angular.element.find(document.querySelector("ifrPowerbi")).attr('contentWindow');
-                 iframe.postMessage(msgTxt, '*');
-                 */
-            }).error(function(data, status){
-                console.log(status);
-            })
-        };
+            console.log(report.token);
+
+            $window.parent.postMessage(msgTxt, '*');
+            console.log(msgTxt);
+            */
+            /*
+             if($window.parent != $window){
+             $window.parent.postMessage(msgTxt, '*');
+             console.log(msgTxt);
+             }
+             */
+            /*
+             var iframe = angular.element.find(document.querySelector("ifrPowerbi")).attr('contentWindow');
+             iframe.postMessage(msgTxt, '*');
+             */
+        }, function onError(response){
+            console.log(response);
+        });
+
 
 
     }

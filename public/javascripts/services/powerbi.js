@@ -1,6 +1,6 @@
 angular
     .module('Discover')
-    .factory('PowerBI', ['$http', function($http){
+    .factory('PowerBIService', ['$http', function($http){
         var powerService = {};
         powerService.GetToken = function(){
             return $http.get('/powerbi');

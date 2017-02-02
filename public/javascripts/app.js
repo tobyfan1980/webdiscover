@@ -1,7 +1,7 @@
 /**
  * Created by gxu on 1/30/17.
  */
-var app = angular.module('Discover', ['ui.router'])
+var app = angular.module('Discover', ['ui.router', 'powerbi'])
 .config([
     '$stateProvider',
     '$urlRouterProvider',
