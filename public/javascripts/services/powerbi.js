@@ -3,14 +3,11 @@ angular
     .factory('PowerBIService', ['$http', function($http){
         var powerService = {};
         powerService.GetToken = function(){
-            return $http.get('/powerbi');
+            // change url here for real development
+            return $http.get('http://localhost:1248/api/reports?includeTokens=true');
         };
 
-        /*
-         userService.GetById = function(userId){
-            return $http.get('/users/' + userId);
-        };
-*/
-
+        //TODO
+        // add more api call here
         return powerService;
     }]);

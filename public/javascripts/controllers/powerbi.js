@@ -11,8 +11,18 @@ app.controller('PowerBICtrl', [
 
         PowerBIService.GetToken().then(function onSuccess(response){
 
-            $scope.report = response.data;
-            console.log($scope.report);
+            $scope.reports = response.data;
+            //console.log($scope.reports);
+
+            $scope.reports.forEach(function (elem) {
+                console.log(elem.accessToken);
+                console.log(elem.type);
+                console.log(elem.embedUrl);
+            });
+
+            //display the first one
+            $scope.display_report = $scope.reports[0];
+
 
 /*
             var msgJson = {

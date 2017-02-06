@@ -2,7 +2,18 @@
 
 <h2>{{status}}</h2>
 
-<div><label>{{report.embedUrl}}</label></div>
-<div><label>{{report.token}}</label></div>
+<div><label>we have {{reports.length}} reports</label></div>
+<!--
+<div ng-if="reports.length > 0">
+    <label>display the first report - {{display_report.embedUrl}} </label>
+    <label>accessToken - {{display_report.accessToken}}</label>
+    <powerbi-report embed-url="display_report.embedUrl" access-token="display_report.accessToken" class="powerbi-frame--dotted"></powerbi-report>
+</div>
+-->
 
-<powerbi-report embed-url="report.embedUrl" access-token="report.token" class="powerbi-frame-large"></powerbi-report>
+<div ng-repeat="report in reports">
+    <label>display report - {{report.embedUrl}} </label>
+    <label>accessToken - {{report.accessToken}}</label>
+    <powerbi-report embed-url="report.embedUrl" access-token="report.accessToken" class="powerbi-frame--dotted"></powerbi-report>
+
+</div>

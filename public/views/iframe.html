@@ -8,26 +8,3 @@
 <div id="divView">
     <iframe id="inner" ng-src="views/inner.html" width="100%" height="200"></iframe>
 </div>
-
-<button id="btnView">View Report !</button>
-<div id="divView">
-    <iframe id="ifrTile" width="100%" height="400"></iframe>
-</div>
-<script>
-    (function () {
-        document.getElementById('btnView').onclick = function() {
-            var iframe = document.getElementById('ifrTile');
-            iframe.src = 'https://embedded.powerbi.com/appTokenReportEmbed?reportId=d4bdb3a6-0f82-4aef-9f15-efe95e0bea1f';
-            iframe.onload = function() {
-                var msgJson = {
-                    action: "loadReport",
-                    accessToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXIiOiIwLjIuMCIsIndjbiI6InRvYnktdGVzdCIsIndpZCI6ImRmNzA4MjUyLTAxNWItNGRhMS1iZGI4LThmYjFlMjk0NmJhZSIsInJpZCI6ImQ0YmRiM2E2LTBmODItNGFlZi05ZjE1LWVmZTk1ZTBiZWExZiIsImlzcyI6IlBvd2VyQklTREsiLCJhdWQiOiJodHRwczovL2FuYWx5c2lzLndpbmRvd3MubmV0L3Bvd2VyYmkvYXBpIiwiZXhwIjoxNDg1OTM1Mjg5LCJuYmYiOjE0ODU5MzE2ODl9.jUVgo_1hkGxxP_QlaLEzQUEBOssIE1FgmkudORV3doQ",
-                    height: 500,
-                    width: 722
-                };
-                var msgTxt = JSON.stringify(msgJson);
-                iframe.contentWindow.postMessage(msgTxt, "*");
-            };
-        };
-    }());
-</script>
