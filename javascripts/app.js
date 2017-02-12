@@ -1,7 +1,7 @@
 /**
  * Created by gxu on 1/30/17.
  */
-var app = angular.module('Discover', ['ui.router', 'powerbi'])
+var app = angular.module('Discover', ['ui.router', 'powerbi', 'ng-echarts'])
 .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -21,11 +21,16 @@ var app = angular.module('Discover', ['ui.router', 'powerbi'])
                 url: '/contact',
                 templateUrl: 'views/contact.html'
             })
-            .state('iframe', {
-                url: '/iframe',
-                templateUrl: 'views/iframe.html',
-                controller: 'IFrameCtrl'
+            .state('api', {
+                url: '/api',
+                controller: 'APICtrl',
+                templateUrl: 'views/api.html'
             })
+            .state('chart', {
+                url: '/chart',
+                templateUrl: 'views/chart.html',
+                controller: 'ChartCtrl'
+            });
         $urlRouterProvider.otherwise('/home');
     }]
 

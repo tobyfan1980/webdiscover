@@ -11,7 +11,10 @@ angular
                 {title: 'Home', link: 'home', type: "link"},
                 {title: 'Contact', link: 'contact', type: "link"},
                 {title: 'PowerBI', link: 'powerbi', type: "link"},
-                {title: 'iFrame', link: 'iframe', type: "link"}
+             //   {title: 'iFrame', link: 'iframe', type: "link"},
+             //   {title: 'API', link: 'api', type:"link"},
+                {title: 'Chart', link: 'chart', type:"link"}
+
             ],
             user_menu: [
                 {title: 'Home', link: 'home', type: "link"},

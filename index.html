@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <!--<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />-->
     <!-- endbower -->
     <!-- endbuild -->
@@ -56,10 +56,12 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/powerbi-client/dist/powerbi.js"></script>
-<script src="bower_components/angular-powerbi/dist/angular-powerbi.js"></script>
+<script src="node_modules/echarts/dist/echarts.min.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="node_modules/powerbi-client/dist/powerbi.js"></script>
+<script src="node_modules/angular-powerbi/dist/angular-powerbi.js"></script>
+<script src="node_modules/ng-echarts/dist/ng-echarts.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -69,10 +71,13 @@
 <script src="javascripts/controllers/powerbi.js"></script>
 <script src="javascripts/controllers/menu.js"></script>
 <script src="javascripts/controllers/iframe.js"></script>
+<script src="javascripts/controllers/api.js"></script>
+<script src="javascripts/controllers/chart.js"></script>
 
 <script src="javascripts/services/menu.js"></script>
 <script src="javascripts/services/powerbi.js"></script>
 <script src="javascripts/services/session.js"></script>
+<script src="javascripts/services/api.js"></script>
 <!-- endbuild -->
 </body>
 

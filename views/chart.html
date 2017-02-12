@@ -1,0 +1,28 @@
+<header  ng-include="'views/nav.html'"></header>
+
+
+<div ng-controller="ChartCtrl">
+    <div class="col-sm-offset-2 col-sm-10 col-lg-3 btn-group" role="group">
+         <button
+            ng-repeat="inspect in inspectTypes"
+            ng-class="selectedInspect==inspect ? 'btn btn-primary' : 'btn btn-default'"
+            ng-click="displaySelectedInspect(inspect)">
+            {{inspect}}
+         </button>
+    </div>
+    <div class="col-sm-offset-2 col-sm-10 col-lg-3 checkbox">
+        <label>
+            <input type="checkbox" ng-model="showAlertLines" ng-change="showAlertLineChanged()"> 显示阈值
+        </label>
+
+    </div>
+    <div ng-if="selectedInspect=='temperature'">
+        <ng-echarts class="col-md-12 col-sm-12 col-lg-9 echarts" ec-config="lineConfig" ec-option="temperatureLineOption" ng-if="showAlertLines"></ng-echarts>
+        <ng-echarts class="col-md-12 col-sm-12 col-lg-9 echarts" ec-config="lineConfig" ec-option="temperatureLineOption2" ng-if="!showAlertLines"></ng-echarts>
+    </div>
+    <div ng-if="selectedInspect=='humidity'">
+        <ng-echarts class="col-md-12 col-sm-12 col-lg-9 echarts" ec-config="lineConfig" ec-option="rhLineOption" ng-if="showAlertLines"></ng-echarts>
+        <ng-echarts class="col-md-12 col-sm-12 col-lg-9 echarts" ec-config="lineConfig" ec-option="rhLineOption2" ng-if="!showAlertLines"></ng-echarts>
+    </div>
+
+</div>

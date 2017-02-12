@@ -107,3 +107,14 @@ body {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     font-size: 90%;
 }
+
+.echarts{
+    padding: 0px;
+    height: 300px;
+    border: dashed 1px darkblue;
+}
+
+.themes{
+    padding: 0px;
+    border: dashed 1px darkblue;
+}
